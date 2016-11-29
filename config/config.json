@@ -1,0 +1,22 @@
+{
+    "prod" : {
+        "api" : "http://api-monsiteenprod.fr/",
+        "url" : "http://monsiteenprod.fr",
+        "meta" : {
+            "image" : "http://www.monsiteenprod.fr/images/facebook.jpg",
+            "title" : "Mon super site",
+            "description" : "Description",
+            "keywords":"Vue Js, Laravel"
+        }
+    },
+    "dev" : {
+        "api" : "http://api-monsiteendev.local/",
+        "url" : "http://monsiteendev.local",
+        "meta" : {
+            "image" : "http://www.monsiteenprod.fr/images/facebook.jpg",
+            "title" : "[DEV] Mon super site",
+            "description" : "[DEV] Description",
+            "keywords":"Vue Js, Laravel"
+        }
+    }
+}
