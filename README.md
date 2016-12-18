@@ -7,13 +7,13 @@ Example of product List / Card from Vuex
 
 You must have gulp
 ```sh
-npm i gulp -g
+yarn global add gulp 
 ```
 
 To work on the project, clone the repo and
 
 ```sh
-$ yarn install (or npm install)
+$ yarn install
 $ gulp
 ```
 
@@ -21,4 +21,10 @@ For production
 
 ```sh
 gulp build
+```
+
+Test E2E with nightwatch
+
+```sh
+gulp test
 ```
