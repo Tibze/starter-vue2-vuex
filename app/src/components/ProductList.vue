@@ -25,7 +25,7 @@ export default {
       <li v-for="p in products">
         {{ p.title }} - {{ p.price }}
         <br>
-        <button
+        <button :class="p.title"
           :disabled="!p.inventory"
           @click="addToCart(p)">
           Add to cart

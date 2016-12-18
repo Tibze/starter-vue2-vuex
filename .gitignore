@@ -4,3 +4,5 @@ dist/
 app/index.html
 .DS_Store
 yarn.lock
+selenium-debug.log
+reports/

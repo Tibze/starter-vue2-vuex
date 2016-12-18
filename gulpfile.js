@@ -15,6 +15,7 @@ var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var template = require('gulp-template');
 var rename = require('gulp-rename');
+var nightwatch = require('gulp-nightwatch');
 
 var webpackDev = require('./webpack/webpack.dev.js');
 var webpackProd = require('./webpack/webpack.prod.js');
@@ -53,7 +54,7 @@ var config = {
   },
   html: function(path) {
     return this.HTML_DIR + path;
-  },  
+  },
   sass: function(path) {
     return this.SASS_DIR + path;
   },
@@ -62,16 +63,16 @@ var config = {
   },
   images: function(path) {
     return this.ASSETS_DIR + this.IMAGE_DIR + path;
-  },      
+  },
   dist: function(path) {
     return this.DIST + path;
-  },    
+  },
   destJS: function(path) {
     return this.BUILD_DIR_JS + path;
   },
   destCSS: function(path) {
     return this.BUILD_DIR_CSS + path;
-  }  
+  }
 };
 
 // Callback function for Plumber
@@ -82,24 +83,24 @@ function syntaxError(error){
 };
 
 // Styles
-gulp.task('styles', function() 
+gulp.task('styles', function()
 {
     return gulp.src(config.SASS_DIR+config.MAIN_SASS_FILE)
-    .pipe(plumber({errorHandler: syntaxError}))   
+    .pipe(plumber({errorHandler: syntaxError}))
     .pipe(sass())
     .pipe(
       gulpif(config.PRODUCTION, minifyCSS())
-    )    
+    )
     .pipe(concat(config.STYLES_CSS_NAME))
     .pipe(
       gulpif(!config.PRODUCTION, gulp.dest(config.BUILD_DIR))
     )
     .pipe(
       gulpif(config.PRODUCTION, gulp.dest(config.DIST_DIR_CSS))
-    )        
+    )
     .pipe(
       gulpif(!config.PRODUCTION, browserSync.reload({ stream: true }))
-    );    
+    );
 
 });
 
@@ -113,7 +114,7 @@ gulp.task('webpack', function(){
     )
     .pipe(
       gulpif(config.PRODUCTION, gulp.dest(config.DIST_DIR_JS))
-    )              
+    )
     .pipe(
       gulpif(!config.PRODUCTION, browserSync.reload({ stream: true }))
     );
@@ -139,7 +140,7 @@ gulp.task('html', function() {
     )
     .pipe(
       gulpif(!config.PRODUCTION, gulp.dest(config.DIR))
-    )         
+    )
     .pipe(
       gulpif(!config.PRODUCTION, browserSync.reload({ stream: true }))
     );
@@ -189,8 +190,17 @@ gulp.task('server', ['run'], function() {
 
 })
 
+//
+
+gulp.task('test',function(){
+  return gulp.src('')
+      .pipe(nightwatch({
+        configFile: 'nightwatch.json'
+      }));
+})
+
 gulp.task('dev', function() {
-  config.PRODUCTION = false; 
+  config.PRODUCTION = false;
   config.WEBPACK_CONFIG = webpackDev;
 });
 
