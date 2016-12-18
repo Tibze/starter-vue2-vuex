@@ -16,7 +16,7 @@ var pngquant = require('imagemin-pngquant');
 var template = require('gulp-template');
 var rename = require('gulp-rename');
 var nightwatch = require('gulp-nightwatch');
-
+var shell = require('gulp-shell');
 var webpackDev = require('./webpack/webpack.dev.js');
 var webpackProd = require('./webpack/webpack.prod.js');
 
@@ -37,6 +37,7 @@ var config = {
   MAIN_SASS_FILE : 'app.scss',
   BUILD_DIR: 'app/.tmp/',
   IMAGE_DIR: 'images/',
+  TEST: 'tests/',
   DIST: 'dist/',
   DIST_DIR_JS: 'dist/scripts/',
   DIST_DIR_CSS: 'dist/styles/',
@@ -192,10 +193,20 @@ gulp.task('server', ['run'], function() {
 
 //
 
-gulp.task('test',function(){
+gulp.task('test:serve',function(){
+  return gulp.src('')
+      .pipe(shell('npm run serve'));
+})
+
+gulp.task('test:unit',function(){
+  return gulp.src('')
+      .pipe(shell('npm run testunit'));
+})
+
+gulp.task('test:e2e',function(){
   return gulp.src('')
       .pipe(nightwatch({
-        configFile: 'nightwatch.json'
+        configFile: config.TEST+'nightwatch.json'
       }));
 })
 

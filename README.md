@@ -7,7 +7,7 @@ Example of product List / Card from Vuex
 
 You must have gulp
 ```sh
-yarn global add gulp 
+yarn global add gulp
 ```
 
 To work on the project, clone the repo and
@@ -23,8 +23,17 @@ For production
 gulp build
 ```
 
+### Tests
+
+Test Unit with karma
+
+```sh
+gulp test:serve
+gulp test:unit
+```
+
 Test E2E with nightwatch
 
 ```sh
-gulp test
+gulp test:e2e
 ```

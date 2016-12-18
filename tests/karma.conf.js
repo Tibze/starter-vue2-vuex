@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Sun Dec 18 2016 18:16:12 GMT+0100 (CET)
 //
-var webpackConfig = require('./webpack/webpack.dev.js')
+var webpackConfig = require('../webpack/webpack.dev.js')
 delete webpackConfig.entry
 
 module.exports = function(config) {
@@ -20,7 +20,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'tests/unit/index.js'
+      'unit/index.js'
     ],
 
 
@@ -32,7 +32,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'tests/unit/index.js': ['webpack']
+      'unit/index.js': ['webpack']
     },
     // use the webpack config
     webpack: webpackConfig,
