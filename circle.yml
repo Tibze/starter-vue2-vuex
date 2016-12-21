@@ -1,6 +1,3 @@
-## Customize the test machine
-machine:
-
 ## Customize dependencies
 dependencies:
   pre:
