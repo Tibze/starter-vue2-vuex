@@ -37,3 +37,6 @@ Test E2E with nightwatch
 ```sh
 gulp test:e2e
 ```
+21/12/2016
+
+Added a circle.yml, run tests in the cloud ( https://circleci.com )
