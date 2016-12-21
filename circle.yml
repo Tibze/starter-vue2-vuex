@@ -28,6 +28,7 @@ checkout:
 ## Customize dependencies
 dependencies:
   pre:
+    - npm install -g gulp
     #- npm install coffeescript # install from a different package manager
     #- gem uninstall bundler # use a custom version of bundler
     #- gem install bundler --pre
@@ -54,7 +55,7 @@ database:
 ## Customize test commands
 test:
   override:
-    - gulp test:unit
+    - gulp test:e2e
   post:
     #- bundle exec rake jasmine:ci: # add an extra test type
         environment:
