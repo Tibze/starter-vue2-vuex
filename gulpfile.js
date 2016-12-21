@@ -193,11 +193,6 @@ gulp.task('server', ['run'], function() {
 
 //
 
-gulp.task('test:serve',function(){
-  return gulp.src('')
-      .pipe(shell('npm run serve'));
-})
-
 gulp.task('test:unit',function(){
   return gulp.src('')
       .pipe(shell('npm run testunit'));

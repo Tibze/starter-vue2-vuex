@@ -10,8 +10,7 @@
     "webpack"
   ],
   "scripts": {
-    "serve": "./node_modules/karma/bin/karma start ./tests/karma.conf.js --single-run",
-    "testunit": "./node_modules/karma/bin/karma run ./tests/karma.conf.js"
+    "testunit": "./node_modules/karma/bin/karma start ./tests/karma.conf.js --single-run"
   },
   "author": "Thibaut MAREILLE",
   "license": "MIT",
