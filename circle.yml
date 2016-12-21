@@ -1,9 +1,9 @@
 ## Customize dependencies
 dependencies:
   pre:
-    - npm install -g gulp
+    #- npm install -g gulp
 
 ## Customize test commands
 test:
   override:
-    - gulp test:e2e
+    - npm run serve && npm run testunit
