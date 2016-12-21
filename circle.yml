@@ -5,7 +5,5 @@ dependencies:
 
 ## Customize test commands
 test:
-  pre:
-    - npm run serve
   override:
-    - npm run testunit
+    - npm run serve
