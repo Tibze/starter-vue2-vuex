@@ -20,6 +20,7 @@ export default {
     console.log('Home Mounted !');
 
     console.log(this.$route);
+    console.log('toto');
 
 
   },
