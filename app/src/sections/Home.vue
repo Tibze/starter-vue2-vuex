@@ -17,7 +17,7 @@ export default {
   },
   mounted(){
     console.log(this);
-    console.log('Home Mounted');
+    console.log('Home Mounted !');
 
     console.log(this.$route);
 
