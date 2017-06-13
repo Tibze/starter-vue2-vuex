@@ -5,6 +5,8 @@ import router from './router';
 import store from './store';
 sync(store, router);
 
+console.log('app');
+
 const app = new Vue({
   router,
   store,
